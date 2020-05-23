@@ -4,6 +4,22 @@
 * 一个在B站[BV17W411y7Mn]上的OA（自动化办公系统）项目。我会尽力完成。其中包含JBPM框架。希望能够提升编程能力。
 ---
 ## 开发环境（develop environment）
+* JDK 1.8_U221
+* Eclipse 2018-09
+* MySQL 5.0
+* Tomcat 6.0
+## 技术规范（Technique Contract）
+1) 分层————SSH（Struts、Spring、Hibernate）deliver with SSH
+2) 技术（Technique）:
+
+工具（toolkit）|版本（version）|说明（Instruction）
+|:-----:|:-----:|---
+Struts |2.3.7|
+Hibernate|3.6.10|实现持久化操作（Realize Persistence Process）
+Spring|3.2
+JBPM|4.4|工作流支持（Work Stream Supports）
+Junit|4|单元测试（Unity Test）
+jQury|1.8
 ## 框架（framework）
 * JBPM:用于开发自动商业系统（辅助进行商业过程和商业决定的系统）的开发工具。
 * JBPM: A toolkit for building business applications to help automate business process and decisions.
