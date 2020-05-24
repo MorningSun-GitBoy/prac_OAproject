@@ -8,13 +8,18 @@
 * Eclipse 2018-09
 * MySQL 5.0
 * Tomcat 6.0
+* 环境配置（config）：
+```
+将struts-2.3.37-all.zip中/lib/{asm-3.3.jar,asm-commons-3.3.jar,asm-tree-3.3.jar,commons-io-2.2.jar,commons-fileupload-1.4.jar,commons-lang3-3.2.jar,freemarker-2.3.28.jar,javassist-3.11.0.GA.jar,ognl-3.0.21.jar,struts2-core-2.3.37.jar,struts2-spring-plugin-2.3.37.jar,xwork-core-2.3.37.jar}放入项目WEBContent/WEB-INF/lib/中，并配置web.xml。
+put /lib/{asm-3.3.jar,asm-commons-3.3.jar,asm-tree-3.3.jar,commons-io-2.2.jar,commons-fileupload-1.4.jar,commons-lang3-3.2.jar,freemarker-2.3.28.jar,javassist-3.11.0.GA.jar,ognl-3.0.21.jar,struts2-core-2.3.37.jar,struts2-spring-plugin-2.3.37.jar,xwork-core-2.3.37.jar}from struts-2.3.37-all.zip into project diractory WEBContent/WEB-INF/lib/,then config the web.xml.
+```
 ## 技术规范（Technique Contract）
 1) 分层————SSH（Struts、Spring、Hibernate）deliver with SSH
 2) 技术（Technique）:
 
 工具（toolkit）|版本（version）|说明（Instruction）
 |:-----:|:-----:|---
-Struts |2.3.7|
+Struts |2.3.37|
 Hibernate|3.6.10|实现持久化操作（Realize Persistence Process）
 Spring|3.2
 JBPM|4.4|工作流支持（Work Stream Supports）
