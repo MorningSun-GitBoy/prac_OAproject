@@ -20,9 +20,12 @@ Spring|3.2
 JBPM|4.4|工作流支持（Work Stream Supports）
 Junit|4|单元测试（Unity Test）
 jQury|1.8
+3) 编码方式（encode）：utf-8
 ## 框架（framework）
 * JBPM:用于开发自动商业系统（辅助进行商业过程和商业决定的系统）的开发工具。
 * JBPM: A toolkit for building business applications to help automate business process and decisions.
+```
+```
 * * 商业过程
 * * business process(BPMN2)
 * * 案例管理
@@ -33,3 +36,4 @@ jQury|1.8
 * * business rules(DRL)
 * * 商务优化
 * * business optimisation(Solver)
+* Spring
