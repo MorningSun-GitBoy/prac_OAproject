@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance
-				http://www.springmodules.org/schema/cache/springmodules-cache.xsd 
-				http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
@@ -34,11 +32,30 @@
 		<property name="dataSource" ref="dataSource"/>
 		<!-- 注入hibernate属性 -->
 		<!-- inject hibernate property -->
-		<props>
-			<prop key=""></prop>
-			<prop key=""></prop>
-			<prop key=""></prop>
-			<prop key=""></prop>
-		</props>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+				<prop key="hibernate.hbmwddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<!-- hibernate映射文件的位置 -->
+		<!-- location of the hibernate reflect file -->
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:cn/itcast/oa/domain</value>
+			</list>
+		</property>
 	</bean>
+	<!-- hibernate 事务管理器 -->
+	<!-- hibernate envent manager -->
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 对注解提供支持 -->
+	<!-- to surpport annotation -->
+	<context:annotation-config/>
+	<context:component-scan base-package="cn.itcast.oa"/><!-- 扫描 scan -->
+	<tx:annotation-driven transaction-manager="txManager"/><!-- 驱动 driver -->
 </beans>
