@@ -14,7 +14,7 @@
 		<filter-name>struts</filter-name>
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
-	<welcoe-file-list>
-		<welcom-file>index.jsp</welcom-file>
-	</welcoe-file-list>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcom-file>
+	</welcome-file-list>
 </web-app>
