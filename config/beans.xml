@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance
+				http://www.springmodules.org/schema/cache/springmodules-cache.xsd 
+				http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context.xsd
+							http://www.springframework.org/schema/aop
+							http://www.springframework.org/schema/aop/spring-aop.xsd
+							http://www.springframework.org/schema/tx
+							http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!-- 读取属性文件 -->
+	<!-- read property file -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 读取数据源 -->
+	<!-- read data source -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbcUrl}"></property>
+		<property name="user" value="${user}"></property>
+		<property name="passsword" value="${password}"></property>
+		<property name="initialPoolSize" value="${initialPoolSize}"></property>
+		<property name="minPoolSize" value="${minPoolSize}"></property>
+		<property name="maxPoolSize" value="${maxPoolSize}"></property>
+	</bean>
+	<!-- 本地会话工厂bean -->
+	<!-- local session factory bean -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalsessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 注入hibernate属性 -->
+		<!-- inject hibernate property -->
+		<props>
+			<prop key=""></prop>
+			<prop key=""></prop>
+			<prop key=""></prop>
+			<prop key=""></prop>
+		</props>
+	</bean>
+</beans>
