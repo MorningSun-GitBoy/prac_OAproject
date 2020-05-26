@@ -58,5 +58,19 @@
 3) 如果框架需要依赖，则需要将依赖也引入WEB-INF/lib中
 * 本案例步骤：
 ```
+Struts
 将struts-2.3.37-all.zip中/lib/{asm-3.3.jar,asm-commons-3.3.jar,asm-tree-3.3.jar,commons-io-2.2.jar,commons-fileupload-1.4.jar,commons-lang3-3.2.jar,freemarker-2.3.28.jar,javassist-3.11.0.GA.jar,ognl-3.0.21.jar,struts2-core-2.3.37.jar,struts2-spring-plugin-2.3.37.jar,xwork-core-2.3.37.jar}放入项目WEBContent/WEB-INF/lib/中，并配置web.xml、struts.xml。
+web.xml中主要配置struts的前端控制器，以及网络首页
+struts.xml中主要配置常量，设置工厂类、Action等
+Spring
+将spring-framework-3.2.7.RELEASE-dist.zip中/libs/{spring-aop-3.2.7.RELEASE.jar,spring-aspects-3.2.7.RELEASE.jar,spring-beans-3.2.7.RELEASE.jar,spring-context-3.2.7.RELEASE.jar,spring-core-3.2.7.RELEASE.jar,spring-expression-3.2.7.RELEASE.jar,spring-jdbc-3.2.7.RELEASE.jar,spring-orm-3.2.7.RELEASE.jar,spring-tx-3.2.7.RELEASE.jar,spring-web-3.2.7.RELEASE.jar}放入项目WEBContent/WEB-INF/lib/中
+还要配置依赖，将spring-framework-3.0.2.RELEASE-dependencies.zip中com.mchange.c3p0/com.springsource.com.mchange.v2.c3p0/0.9.1.2/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar,org.aopalliance/com.springsource.org.aopalliance/1.0.0/com.springsource.org.aopalliance-1.0.0.jar,org.apache.commons/com.springsource.org.apache.commons.logging/1.1.1/com.springsource.org.apache.commons.logging-1.1.1.jar,org.apache.log4j/com.springsource.org.apache.log4j/1.2.15/com.springsource.org.apache.log4j-1.2.15.jar,org.aspectj/com.springsource.org.aspectj.weaver/1.6.8.RELEASE/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar放入WEBContent/WEB-INF/lib/中
+之后要配置beans.xml和jdbc.properties,log4j.properties.
+beans.xml中设置读取属性文件为jdbc.properties,将数据库的详细信息写入jdbc.properties，在beans.xml中建立新bean根据其中所写信息配置property
+log4j.properties中配置stdout,logfile,log-level
+Hibernate
+将hibernate-distribution-3.6.10.Final-dist.zip中hibernate3.jar,/lib/jpa/hibernate-jpa-2.0-api-1.0.1.Final,/lib/required/{antlr-2.7.6.jar,commons-collections-3.1.jar,dom4j-1.6.1.jar,jta-1.1.jar,ognl-3.0.21.jar,slf4j-api-1.6.1.jar}放入项目WEBContent/WEB-INF/lib/
+由于hibernate使用slf4j进行记录，所以slf4j-log4j12-1.7.2.jar 也应该放在lib里
+本来应该将/lib/required中的所有东西都要引入，但是有些已经在上面引入过了，所以不重复引入。
+之后继续配置beans.xml，配置hibernate的设置，本地话工厂设置成springframework的，property中注入hibernate属性，并对注解进行支持。
 ```
