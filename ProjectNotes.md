@@ -72,5 +72,29 @@ Hibernate
 将hibernate-distribution-3.6.10.Final-dist.zip中hibernate3.jar,/lib/jpa/hibernate-jpa-2.0-api-1.0.1.Final,/lib/required/{antlr-2.7.6.jar,commons-collections-3.1.jar,dom4j-1.6.1.jar,jta-1.1.jar,ognl-3.0.21.jar,slf4j-api-1.6.1.jar}放入项目WEBContent/WEB-INF/lib/
 由于hibernate使用slf4j进行记录，所以slf4j-log4j12-1.7.2.jar 也应该放在lib里
 本来应该将/lib/required中的所有东西都要引入，但是有些已经在上面引入过了，所以不重复引入。
+hibernate底层依赖jdbc还需要引入一个jdbc的jar
 之后继续配置beans.xml，配置hibernate的设置，本地话工厂设置成springframework的，property中注入hibernate属性，并对注解进行支持。
+```
+## 项目树
+* src
+* * cn.itcast.oa.action
+* * cn.itcast.oa.base
+* * cn.itcast.oa.dao
+* * * cn.itcast.oa.dao.impl
+* * cn.itcast.oa.domain
+* * cn.itcast.oa.service
+* * * cn.itcast.oa.service.impl
+* * cn.itcast.oa.util
+```
+dao的搭建
+    dao分为通用dao和其他dao，通用dao写在base里，其他dao要写进dao里。一般采用接口————实例的方式，每个dao都实现对应的接口，将类单独放在impl包中，由于base类有限，故不区分。
+    basedao：主要在于泛型的识别，其次是增删改查的基本实现。
+domain的搭建
+    一个类对应一个同名的.hbm.xml文件，其头标签可以从>>hibernate3.jar>org.hibernate>hibernate-mapping-3.0.dtd中摘录。
+    其中id多是主键，要设置类型
+    porperty为其他属性
+service的搭建
+    也是采用接口————实例的方式，每个service实现对应的接口。分包与dao相同。
+util的搭建
+    主要用于存放项目中的几个通用方法类库，使得代码更少。
 ```
