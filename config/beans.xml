@@ -21,14 +21,14 @@
 		<property name="driverClass" value="${driverClass}"></property>
 		<property name="jdbcUrl" value="${jdbcUrl}"></property>
 		<property name="user" value="${user}"></property>
-		<property name="passsword" value="${password}"></property>
+		<property name="password" value="${password}"></property>
 		<property name="initialPoolSize" value="${initialPoolSize}"></property>
 		<property name="minPoolSize" value="${minPoolSize}"></property>
 		<property name="maxPoolSize" value="${maxPoolSize}"></property>
 	</bean>
 	<!-- 本地会话工厂bean -->
 	<!-- local session factory bean -->
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalsessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<!-- 注入hibernate属性 -->
 		<!-- inject hibernate property -->

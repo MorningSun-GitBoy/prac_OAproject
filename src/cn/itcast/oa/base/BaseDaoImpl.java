@@ -4,6 +4,8 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,6 +15,7 @@ import org.hibernate.SessionFactory;
  * @param <T>
  */
 public class BaseDaoImpl<T> implements IBaseDao<T> {
+	@Resource
 	private SessionFactory sessionFactory;
 	private Class<T> clazz;
 	@SuppressWarnings("unchecked")
