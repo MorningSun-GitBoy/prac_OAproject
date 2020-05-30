@@ -44,7 +44,7 @@
 		<!-- location of the hibernate reflect file -->
 		<property name="mappingDirectoryLocations">
 			<list>
-				<value>classpath:cn/itcast/oa/domain</value>
+				<value>classpath:cn/itcast/oa/domain/</value>
 			</list>
 		</property>
 	</bean>

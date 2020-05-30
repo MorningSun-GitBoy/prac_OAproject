@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="cn.itcast.oa.domain.Book" table="itcast_book">
-		<id name="id">
+		<id name="id" type="long">
 			<generator class="native"/>
 		</id>
 		<property name="name" length="32"/>

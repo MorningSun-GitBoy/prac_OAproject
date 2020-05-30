@@ -1,4 +1,4 @@
-package cn.itcast.oa.service;
+package cn.itcast.oa.service.impl;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.itcast.oa.dao.IBookDao;
 import cn.itcast.oa.domain.Book;
+import cn.itcast.oa.service.IBookService;
 
 @Service
 @Transactional
