@@ -70,4 +70,28 @@ Put hibernate3.jar,/lib/jpa/hibernate-jpa-2.0-api-1.0.1.Final,/lib/required/{ant
 Due to hibernate use slf4j to log, we should put slf4j-log4j12-1.7.2.jar into it.
 Generally we should put all the jars from hibernate-distribution-3.6.10.Final-dist.zip/lib/required,but some of them has been included before.
 Then set beans.xml add hibernate settings in it,set local session factory bean as springframework's,in property inject hibernate's property , and support annonations suppoting.
+Hibernate is denpendented with jdbc in basic so we should also include jdbc jar.
+```
+## Project tree
+* src
+* * cn.itcast.oa.action
+* * cn.itcast.oa.base
+* * cn.itcast.oa.dao
+* * * cn.itcast.oa.dao.impl
+* * cn.itcast.oa.domain
+* * cn.itcast.oa.service
+* * * cn.itcast.oa.service.impl
+* * cn.itcast.oa.util
+```
+to build dao
+    dao are divided to generic dao and other dao，generic dao write in base and others write in dao.Ususally , we write at interface————implenments way,every dao has their own implement.You should put into package impl,due to base class has a littel number,so do not dispqch interface and implenments.
+    basedao：first thing is to reconganize the gernerics class type,then you should realize the fundmatal database operation method.
+to build domain
+    one class has a same name .hbm.xml fiel,which head boday an copy from>>hibernate3.jar>org.hibernate>hibernate-mapping-3.0.dtd .
+    label id mains key , should set the type;
+    label porperty is other properties.
+to build service
+    also useinterface————implenments way,every dao has their own implement,which has a similar package way.
+to build util
+    we will abstract some generic class in project to make code forthright.
 ```
