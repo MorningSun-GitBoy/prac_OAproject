@@ -83,6 +83,9 @@ Hibernate is denpendented with jdbc in basic so we should also include jdbc jar.
 * * * cn.itcast.oa.service.impl
 * * cn.itcast.oa.util
 ```
+to build action
+    there will be abstract a class from actions putting into base,which shuold implement a  interface and extends SupperAction but also  all the service interface object as the properties.
+    write common action class in action to give project their functions.
 to build dao
     dao are divided to generic dao and other dao，generic dao write in base and others write in dao.Ususally , we write at interface————implenments way,every dao has their own implement.You should put into package impl,due to base class has a littel number,so do not dispqch interface and implenments.
     basedao：first thing is to reconganize the gernerics class type,then you should realize the fundmatal database operation method.

@@ -86,6 +86,9 @@ hibernate底层依赖jdbc还需要引入一个jdbc的jar
 * * * cn.itcast.oa.service.impl
 * * cn.itcast.oa.util
 ```
+action的搭建
+    action在项目中会抽象出一个父类放入base，其父类要实现一个接口并继承action的超类，并将一切service接口对象安置在类中。
+    在action中写入普通action类，完成功能
 dao的搭建
     dao分为通用dao和其他dao，通用dao写在base里，其他dao要写进dao里。一般采用接口————实例的方式，每个dao都实现对应的接口，将类单独放在impl包中，由于base类有限，故不区分。
     basedao：主要在于泛型的识别，其次是增删改查的基本实现。
