@@ -68,6 +68,7 @@ Spring
 之后要配置beans.xml和jdbc.properties,log4j.properties.
 beans.xml中设置读取属性文件为jdbc.properties,将数据库的详细信息写入jdbc.properties，在beans.xml中建立新bean根据其中所写信息配置property
 log4j.properties中配置stdout,logfile,log-level
+最后，要在web.xml中配置spring的上下文参数和监听器
 Hibernate
 将hibernate-distribution-3.6.10.Final-dist.zip中hibernate3.jar,/lib/jpa/hibernate-jpa-2.0-api-1.0.1.Final,/lib/required/{antlr-2.7.6.jar,commons-collections-3.1.jar,dom4j-1.6.1.jar,jta-1.1.jar,ognl-3.0.21.jar,slf4j-api-1.6.1.jar}放入项目WEBContent/WEB-INF/lib/
 由于hibernate使用slf4j进行记录，所以slf4j-log4j12-1.7.2.jar 也应该放在lib里

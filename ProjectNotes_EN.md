@@ -65,6 +65,7 @@ put /libs/{spring-aop-3.2.7.RELEASE.jar,spring-aspects-3.2.7.RELEASE.jar,spring-
 Then you should write beans.xml , jdbc.properties and log4j.properties.
 set reading file jdbc.properties in beans.xml.Write database detial in jdbc.properties,build a new bean and according to the jdbc.properties write property in that bean in beans.xml .
 Set stdout,logfile,log-level in log4j.properties.
+Last,you should configure spring parameters and listener in web.xml .
 Hibernate
 Put hibernate3.jar,/lib/jpa/hibernate-jpa-2.0-api-1.0.1.Final,/lib/required/{antlr-2.7.6.jar,commons-collections-3.1.jar,dom4j-1.6.1.jar,jta-1.1.jar,ognl-3.0.21.jar,slf4j-api-1.6.1.jar} from hibernate-distribution-3.6.10.Final-dist.zip into WEBContent/WEB-INF/lib/ .
 Due to hibernate use slf4j to log, we should put slf4j-log4j12-1.7.2.jar into it.
