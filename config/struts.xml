@@ -14,5 +14,6 @@
 	<!-- change the suffix of struts Action -->
 	<constant name="struts.action.extension" value="do"/>
 	<package name="default" namespace="/" extends="struts-default">
+		<action name="bookAction" class="bookAction"></action>
 	</package>
 </struts>
