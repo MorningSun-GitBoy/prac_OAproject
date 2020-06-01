@@ -102,3 +102,29 @@ service的搭建
 util的搭建
     主要用于存放项目中的几个通用方法类库，使得代码更少。
 ```
+## UML 设计
+* Role
+* * id:Long
+* * name:String
+* * descripeion:String
+* * users:Set::User
+---
+* Department
+* * id:Long
+* * name:String
+* * descripeion:String
+* * parent:Department
+* * children:Set::Department
+* * users:Set::User
+---
+* User
+* * id:Long
+* * loginName:String
+* * name:String
+* * gender:int
+* * phone:String
+* * email:String
+* * description:String
+* * password:String
+* * department:Department
+* * roles:Set::Role

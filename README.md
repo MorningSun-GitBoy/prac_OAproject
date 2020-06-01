@@ -38,3 +38,6 @@ jQury|1.8
 * * 商务优化
 * * business optimisation(Solver)
 * Spring
+## 注意（Attantion）
+* 如果出现什么问题，先考察环境配置是否正确
+* If it happened any accident,please check out the configuration.

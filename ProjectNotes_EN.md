@@ -93,9 +93,35 @@ to build dao
 to build domain
     one class has a same name .hbm.xml fiel,which head boday an copy from>>hibernate3.jar>org.hibernate>hibernate-mapping-3.0.dtd .
     label id mains key , should set the type;
-    label porperty is other properties.
+    label porperty is other arributes.
 to build service
     also useinterface————implenments way,every dao has their own implement,which has a similar package way.
 to build util
     we will abstract some generic class in project to make code forthright.
 ```
+## UML Design
+* Role
+* * id:Long
+* * name:String
+* * descripeion:String
+* * users:Set::User
+---
+* Department
+* * id:Long
+* * name:String
+* * descripeion:String
+* * parent:Department
+* * children:Set::Department
+* * users:Set::User
+---
+* User
+* * id:Long
+* * loginName:String
+* * name:String
+* * gender:int
+* * phone:String
+* * email:String
+* * description:String
+* * password:String
+* * department:Department
+* * roles:Set::Role
