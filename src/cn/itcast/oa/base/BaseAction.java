@@ -14,6 +14,7 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	@Resource
 	//最好将一切所需的Service接口放在祖类里
 	protected IBookService bookService;
+	protected IRoleService roleService;
 	protected T model;
 	public BaseAction(){
 		ParameterizedType genericSuperclass = (ParameterizedType) this.getClass().getGenericSuperclass();//获得真正父类 ：get the true father class
