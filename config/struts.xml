@@ -15,5 +15,8 @@
 	<constant name="struts.action.extension" value="do"/>
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="bookAction" class="bookAction"></action>
+		<action name="role_*" class="roleAction">
+			<result name="list">WEB-INF/jsp/role/list.jsp</result>
+		</action>
 	</package>
 </struts>
