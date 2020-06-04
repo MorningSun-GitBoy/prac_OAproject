@@ -60,4 +60,19 @@ public class RoleAction extends BaseAction<Role>{
 		roleService.update(r);
 		return "tolist";
 	}
+	
+	/**
+	 * 5.跳转到添加页面
+	 */
+	public String addUI() {
+		return "addUI";
+	}
+	
+	/**
+	 * 6.完成数据的添加
+	 */
+	public String add() {
+		roleService.save(model);
+		return "tolist";
+	}
 }

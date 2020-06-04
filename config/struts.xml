@@ -22,6 +22,7 @@
 				<param name="namespace">/</param>
 			</result>
 			<result name="editUI">/WEB-INF/jsp/role/edit.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/role/addUI.jsp</result>
 		</action>
 	</package>
 </struts>
