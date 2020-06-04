@@ -1,25 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitonal//EN">
 <html>
 	<head>
 		<title>OA 岗位列表</title>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<script language="javascript" src="${pageContext.request.contextPath}/script/jquery.js" charset="utf-8"></script>
-		<script language="javascript" src="${pageContext.request.contextPath}/script/pageCommon.js" charset="utf-8"></script>
-		<script language="javascript" src="${pageContext.request.contextPath}/script/PageUtils.js" charset="utf-8"></script>
-		<script language="javascript" src="${pageContext.request.contextPath}/script/DataShowManager.js" charset="utf-8"></script>
-		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/pageCommon.css"/>
-		<script type="text/javascript">
-		</script>
+		<%@include file="/WEB-INF/jsp/public/header.jsp"%>
 	</head>
 	<body>
 		<div id="Title_bar">
 			<div id="Title_bar_Head">
 				<div id="Title_Head"></div>
 				<div id="Title">
-					<img border="0" width="13" height="13" src="${pageContext.request.contextPath}/style/images/title_arrow.gif"/>
+					<img border="0" width="13" height="13" src="${pageContext.request.contextPath}/style/images/title_arrow.png"/>
 				</div>
 				<div id="Title_End"></div>
 			</div>
@@ -33,7 +25,7 @@
 						<td>相关操作</td>
 					</tr>
 				</thead>
-				<tbody id="TableData" class="dataContainer" datakey="rolelist">
+				<tbody id="TableData" class="dataContainer" datakey="roleList">
 					<s:iterator value="list">
 					<tr class="TableDetail template">
 						<td>${role.name}&nbsp;</td>
@@ -48,7 +40,7 @@
 			</table>
 			<div id="TableTaile">
 				<div id="TableTail_inside">
-					<a href="saveUI.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
+					<s:a action="role_addUI"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></s:a>
 				</div>
 			</div>
 		</div>
