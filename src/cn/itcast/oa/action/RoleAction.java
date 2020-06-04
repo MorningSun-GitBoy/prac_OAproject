@@ -36,4 +36,28 @@ public class RoleAction extends BaseAction<Role>{
 		*/
 		return "tolist";
 	}
+	
+	/**
+	 * 3.跳转到修改页面
+	 */
+	public String editUI() {
+		//根据id查询岗位
+		//according to id search the role
+		Role r = roleService.getById(model.getId());
+		getValueStack().push(r);//放入“值栈用于回显”
+		return "editUI";
+	}
+	
+	/**
+	 * 4.完成数据修改
+	 */
+	public String edit() {
+		//先查询，在修改
+		//search then update
+		Role r = roleService.getById(model.getId());
+		r.setName(model.getName());
+		r.setDescripeion(model.getDescripeion());
+		roleService.update(r);
+		return "tolist";
+	}
 }
