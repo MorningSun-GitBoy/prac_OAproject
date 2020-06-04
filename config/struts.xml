@@ -17,6 +17,10 @@
 		<action name="bookAction" class="bookAction"></action>
 		<action name="role_*" class="roleAction">
 			<result name="list">WEB-INF/jsp/role/list.jsp</result>
+			<result name="tolist" type="redirectAction">
+				<param name="actionName">role_list</param>
+				<param name="namespace">/</param>
+			</result>
 		</action>
 	</package>
 </struts>

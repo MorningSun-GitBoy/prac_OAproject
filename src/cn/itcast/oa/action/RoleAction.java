@@ -23,4 +23,17 @@ public class RoleAction extends BaseAction<Role>{
 							 //pop into the stack
 		return "list";
 	}
+	
+	/**
+	 * 2.根据id来删除项
+	 */
+	public String delet() {
+		roleService.delete(model.getId());
+		/**
+		* if private T model;
+		* roleService.delete(this.getModel().getId());
+		* why 为啥不这么写？
+		*/
+		return "tolist";
+	}
 }
