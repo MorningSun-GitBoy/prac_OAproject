@@ -40,6 +40,7 @@ public class DepartmentAction extends BaseAction<Department>{
 	public String edit() {
 		Department depar = deparService.getById(model.getId());
 		depar.setName(model.getName());
+		depar.setParent(model.getParent());
 		depar.setDescripeion(model.getDescripeion());
 		deparService.update(depar);
 		return "edit";
