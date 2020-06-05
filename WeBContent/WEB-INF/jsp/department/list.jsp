@@ -33,7 +33,7 @@
 						<td>${department.parent.name}&nbsp;</td>
 						<td>${department.description}&nbsp;</td>
 						<td><s:a onClick="return window.confirm('这将删除所有下级部门，确定删除此项？')" action="depar_delete?id=%{id}" namespacr="/">删除</s:a>
-							<s:a action="depar_editUI?id=%{id}" namespacr="/">修改</s:a>
+							<s:a action="depar_editUI?id=%{id}" namespace="/">修改</s:a>
 						</td>
 					</tr>
 					</s:iterator>
@@ -41,14 +41,15 @@
 			</table>
 			<div id="TableTail">
 				<div id="TableTail_inside">
-					<s:a action="depar_addUI"><img src="${pageContext.request.contextPath}/style/images/creatNew.png"></s:a>
+					<s:a action="depar_addUI" namespace="/"><img src="${pageContext.request.contextPath}/style/images/creatNew.png"></s:a>
 				</div>
 			</div>
 			<div id="Description">
-				说明<br/>
+				说明：<br/>
 				1.列表页面只显示同一层的（同级的）部门数据，默认显示最顶级的部门列表。<br/>
 				2.点击部门名称，可以查看部门相应的下级部门列表。<br/>
 				3.删除部门时，同时删除此部门的所有下级部门<br/>
+				<!-- 正常情况下会引入判断 -->
 			</div>
 	</body>
 </html>

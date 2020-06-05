@@ -31,7 +31,7 @@
 						<td>${role.name}&nbsp;</td>
 						<td>${role.description}&nbsp;</td>
 						<td><s:a onClick="return window.confirm('确定删除此项？')" action="role_delete?id=%{id}" namespacr="/">删除</s:a>
-							<s:a action="role_editUI?id=%{id}" namespacr="/">修改</s:a>
+							<s:a action="role_editUI?id=%{id}" namespace="/">修改</s:a>
 							<s:a href="setPrivilegeUI.html">设置权限</s:a>
 						</td>
 					</tr>
