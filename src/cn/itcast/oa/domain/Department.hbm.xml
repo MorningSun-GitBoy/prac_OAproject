@@ -17,7 +17,7 @@
         <many-to-one name="parent" class="cn.itcast.oa.domain.Department" fetch="join">
             <column name="PARENT_ID" />
         </many-to-one>
-        <set name="children" inverse="false" lazy="true">
+        <set name="children" cascade="delete">
             <key>
                 <column name="PARENT_ID" />
             </key>
