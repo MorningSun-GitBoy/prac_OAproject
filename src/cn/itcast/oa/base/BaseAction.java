@@ -18,6 +18,10 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	protected IBookService bookService;
 	@Resource
 	protected IRoleService roleService;
+	@Resource
+	protected IDepartmentService deparService;
+	@Resource
+	protected IUserService userService;
 	protected T model;
 
 	public BaseAction() {
