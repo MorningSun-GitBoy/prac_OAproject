@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitonal//EN">
 <html>
 	<head>
-		<title>OA 部门管理</title>
+		<title>OA 部门设置</title>
 		<%@include file="/WEB-INF/jsp/public/header.jsp"%>
 	</head>
 	<body>

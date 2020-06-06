@@ -11,6 +11,13 @@ import cn.itcast.oa.domain.Department;
 @Controller
 @Scope("prototype")
 public class DepartmentAction extends BaseAction<Department>{
+	private Long parentID;//属性驱动
+	public Long getParentID() {
+		return parentID;
+	}
+	public void setParentID(Long parentID) {
+		this.parentID = parentID;
+	}
 	/**
 	 * 1.展示部门列表
 	 */
@@ -43,19 +50,27 @@ public class DepartmentAction extends BaseAction<Department>{
 		depar.setParent(model.getParent());
 		depar.setDescripeion(model.getDescripeion());
 		deparService.update(depar);
-		return "edit";
+		return "tolist";
 	}
 	/**
 	 * 5.显示新建页面
 	 */
 	public String addUI() {
+		List<Department> list = deparService.findAll();
+		getValueStack().set("deparList", list);
 		return "addUI";
 	}
 	/**
 	 * 6.完成新建
 	 */
 	public String add() {
+		if(parentID != null && parentID != 0) {
+			Department parent = deparService.getById(parentID);
+			model.setParent(parent);
+		}else {
+			model.setParent(null);
+		}
 		deparService.save(model);
-		return "add";
+		return "tolist";
 	}
 }
