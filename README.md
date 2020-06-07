@@ -37,7 +37,12 @@ jQury|1.8
 * * business rules(DRL)
 * * 商务优化
 * * business optimisation(Solver)
+* Struts2
 * Spring
+* hibernet
+```
+对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行;但是无法调优，最终被淘汰
+```
 ## 注意（Attantion）
 * 如果出现什么问题，先考察环境配置是否正确
 * If it happened any accident,please check out the configuration.
