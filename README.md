@@ -9,6 +9,9 @@
 * MySQL 5.0
 * Tomcat 6.0
 * 按本项目的笔记配置项目
+## 注意（Attantion）
+* 如果出现什么问题，先考察环境配置是否正确
+* If it happened any accident,please check out the configuration.
 ## 技术规范（Technique Contract）
 1) 分层————SSH（Struts、Spring、Hibernate）deliver with SSH
 2) 技术（Technique）:
@@ -38,11 +41,26 @@ jQury|1.8
 * * 商务优化
 * * business optimisation(Solver)
 * Struts2
+```
+成熟的基于MVC设计模式的web应用程序框架,是以WebWork框架和Struts框架为基础，通过提供增强和改进的Struts框架，进而实现简化web技术人员开发工作的目标。但由于高位漏洞和未完全分离的前后端而淘汰。
+```
+* * 使用POJO来接收表单输入，即Action类。
+* * 创建了功能非常类似于标准的Struts2 标签的AJAX标签，把AJAX支持整合进其结果中。
+* * 在Struts2 中，可使用Freemarker的模板对标签标记进行调整，而修改标签不需要JSP或是Java知识，基本的HTML、XML和CSS知识就足够了。
 * Spring
+```
+基于 POJO 编程模型,使用依赖注入和控制反转技术，通过轻量级的 IOC 容器实现开发和部署应用程序的框架。依赖注入（或者有时被称为配线）可以通过向构造函数传递参数的方式，或者通过使用 setter 方法 post-construction发生，有助于将这些类粘合在一起，并且在同一时间让它们保持独立。spring提供了一致的事务管理接口，具有良好的扩展性。目前仍在使用
+```
+* * 环境配置
+* * 原理
 * hibernet
 ```
-对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架，hibernate可以自动生成SQL语句，自动执行;但是无法调优，最终被淘汰
+对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架（利用描述对象和数据库表之间映射的元数据，自动把Java应用程序中的对象，持久化到关系型数据库的表中），hibernate可以自动生成SQL语句，自动执行;但是无法调优，最终被淘汰
 ```
-## 注意（Attantion）
-* 如果出现什么问题，先考察环境配置是否正确
-* If it happened any accident,please check out the configuration.
+* * 核心配置文件（core configure file）：
+* * * xxx.hbm.xml
+>用于将类中的各种属性转换成表中的各种表头，完成从数据类到数据表的映射
+
+>Use to tranform the property in class to tables,finish the confect from data calss to data table.
+* * * hibernate.cfg.xml(SSH中将它与bean.xml写在一起)(writing in bean.xml using SSH)
+>输入固定文件头，并完成必要的配置，连接MySQL数据库的基本参数：用户名，密码，地址，驱动类；Hibernate的方言：org.hibernate.dialect.MySQLDialect，org.hibernate.dialect.MySQL5InnoDBDialect；应该加载的映射文件。不同的版本，会有不同的配置方法，但大体一致。
