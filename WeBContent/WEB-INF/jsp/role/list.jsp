@@ -38,7 +38,7 @@
 					</s:iterator>
 				</tbody>
 			</table>
-			<div id="TableTaile">
+			<div id="TableTail">
 				<div id="TableTail_inside">
 					<s:a action="role_addUI"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></s:a>
 				</div>
