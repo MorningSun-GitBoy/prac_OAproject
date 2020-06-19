@@ -3,4 +3,4 @@
 /bin/
 /build/
 /test/
-/WeBContent/build/
+/WeBContent/WEB-INF/classes/
