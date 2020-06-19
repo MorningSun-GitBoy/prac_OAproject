@@ -52,4 +52,13 @@ public class DepartmentService implements IDepartmentService{
 		return departmentDao.findAll();
 	}
 
+	@Override
+	public List<Department> findTopList(){
+		return departmentDao.findTopList();
+	}
+	
+	@Override
+	public List<Department> findChildren(Long Id){
+		return departmentDao.findChildren(Id);
+	}
 }

@@ -17,4 +17,8 @@ public interface IDepartmentService {
 
 	public List<Department> findAll();// 输出整表 ：print the whole table
 
+	public List<Department> findTopList();//输出表中无上级部门的对象
+	
+	public List<Department> findChildren(Long Id);//输出表中某项的子部门
+	
 }

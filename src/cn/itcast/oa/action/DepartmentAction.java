@@ -22,7 +22,13 @@ public class DepartmentAction extends BaseAction<Department>{
 	 * 1.展示部门列表
 	 */
 	public String list() {
-		List<Department> list = deparService.findAll();
+		//List<Department> list = deparService.findAll();
+		List<Department> list ;
+		if (parentId == null) {
+			list = deparService.findTopList();
+		}else {
+			list = deparService.findChildren(parentId);
+		}
 		getValueStack().set("lsit", list);
 		return "list";
 	}
