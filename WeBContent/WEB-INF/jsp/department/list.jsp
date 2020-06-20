@@ -46,6 +46,9 @@
 		<div id="TableTail">
 			<div id="TableTail_inside">
 				<s:a action="depar_addUI?parentId=%{parentId}" namespace="/"><img src="${pageContext.request.contextPath}/style/images/creatNew.png"></s:a>
+				<s:if test="parentId != null">
+					<s:a action="depar_list?parentId=%{dep.parent.id}" namespace="/"><img src="${pageContext.request.contextPath}/style/images/goBack.png"></s:a>
+				</s:if>
 			<!-- 跳转时，页面的值栈就已输入parentId -->
 			</div>
 		</div>

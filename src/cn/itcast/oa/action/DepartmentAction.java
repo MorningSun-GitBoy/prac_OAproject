@@ -28,6 +28,8 @@ public class DepartmentAction extends BaseAction<Department>{
 			list = deparService.findTopList();
 		}else {
 			list = deparService.findChildren(parentId);
+			Department dep = deparService.getById(parentId);
+			getValueStack().set("dep", dep);
 		}
 		getValueStack().set("lsit", list);
 		return "list";
