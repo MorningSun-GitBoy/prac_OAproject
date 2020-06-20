@@ -45,7 +45,8 @@
 		</div>
 		<div id="TableTail">
 			<div id="TableTail_inside">
-				<s:a action="depar_addUI" namespace="/"><img src="${pageContext.request.contextPath}/style/images/creatNew.png"></s:a>
+				<s:a action="depar_addUI?parentId=%{parentId}" namespace="/"><img src="${pageContext.request.contextPath}/style/images/creatNew.png"></s:a>
+			<!-- 跳转时，页面的值栈就已输入parentId -->
 			</div>
 		</div>
 		<div id="Description">
