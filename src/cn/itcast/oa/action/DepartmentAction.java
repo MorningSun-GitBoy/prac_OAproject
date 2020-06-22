@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import cn.itcast.oa.base.BaseAction;
 import cn.itcast.oa.domain.Department;
+import cn.itcast.oa.utils.TreeViewPractice;
 
 @Controller
 @Scope("prototype")
@@ -76,7 +77,8 @@ public class DepartmentAction extends BaseAction<Department>{
 	 * 5.显示新建页面
 	 */
 	public String addUI() {
-		List<Department> list = deparService.findAll();
+		List<Department> toplist = deparService.findTopList();
+		List<Department> list = TreeViewPractice.getTreeList(toplist);;
 		getValueStack().set("deparList", list);
 		return "addUI";
 	}
