@@ -7,6 +7,6 @@
 		<%@include file="/WEB-INF/jsp/public/header.jsp"%>
 	</head>
 	<body>
-	hhhhh
+		<h1>hhhhh</h1>
 	</body>
 </html>
