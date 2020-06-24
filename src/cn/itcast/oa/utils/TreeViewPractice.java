@@ -2,6 +2,7 @@ package cn.itcast.oa.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import cn.itcast.oa.domain.Department;
 
@@ -27,10 +28,22 @@ public class TreeViewPractice {
 		for(Department dep:toplist) {
 			dep.setName(prefix+dep.getName());
 			treelist.add(dep);
-			
+			for(Department d:getChildrens(dep.getChildren(),space)) {
+				treelist.add(d);
+			}
 		}
 		return treelist;
 	}
 	
-	
+	public static List<Department> getChildrens(Set<Department> childrenSet,String space){
+		List<Department> result = new ArrayList<Department>();
+		for(Department dep:childrenSet) {
+			dep.setName(space+prefix+dep.getName());
+			result.add(dep);
+			for(Department d:getChildrens(dep.getChildren(),space+space)) {
+				result.add(d);
+			}
+		}
+		return result;
+	}
 }
