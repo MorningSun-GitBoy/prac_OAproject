@@ -46,7 +46,8 @@ public class DepartmentAction extends BaseAction<Department>{
 	 * 3.显示更改页面
 	 */
 	public String editUI() {
-		List<Department> list = deparService.findAll();
+		List<Department> toplist = deparService.findTopList();
+		List<Department> list = TreeViewPractice.getTreeList(toplist,model.getId());
 		getValueStack().set("deparList", list);
 		Department depar = deparService.getById(model.getId());
 		if(depar.getParent()!=null) {
@@ -78,7 +79,7 @@ public class DepartmentAction extends BaseAction<Department>{
 	 */
 	public String addUI() {
 		List<Department> toplist = deparService.findTopList();
-		List<Department> list = TreeViewPractice.getTreeList(toplist);;
+		List<Department> list = TreeViewPractice.getTreeList(toplist);
 		getValueStack().set("deparList", list);
 		return "addUI";
 	}
