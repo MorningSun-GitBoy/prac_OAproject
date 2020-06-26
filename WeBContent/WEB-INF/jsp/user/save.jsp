@@ -28,7 +28,7 @@
 							<tr>
 								<td width="100">所属部门</td>
 								<td>
-									<s:select list="treeList" name="deparId" listKey="id" listValue="name" headKey="" headValue="请选择部门" cssClass="SelectStyle"></s:select>
+									<s:select name="depars" list="treeList" name="deparId" listKey="id" listValue="name" headKey="" headValue="请选择部门" cssClass="SelectStyle"></s:select>
 								</td>
 							</tr>
 							<tr><td>登录名</td>
@@ -57,6 +57,7 @@
 						<table cellpadding="0" cellspacing="0" class="mainForm">
 							<tr>
 								<td width="100px">岗位</td>
+								<td><s:select name="roleIds" list="roleList" listKey="id" listValue="name" multiple="true" size="10" cssClass="SelectStyle"></s:select></td>
 								<td>按住Ctrl可以多选或取消选择</td>
 							</tr>
 						</table>
