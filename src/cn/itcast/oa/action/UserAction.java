@@ -6,7 +6,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import cn.itcast.oa.base.BaseAction;
+import cn.itcast.oa.domain.Department;
+import cn.itcast.oa.domain.Role;
 import cn.itcast.oa.domain.User;
+import cn.itcast.oa.utils.TreeViewPractice;
 
 @Controller
 @Scope("prototype")
@@ -30,6 +33,11 @@ public class UserAction extends BaseAction<User>{
 	 * 3.展示添加页面
 	 */
 	public String addUI() {
+		List<Department> topList = deparService.findTopList();
+		List<Department> deparTree = TreeViewPractice.getTreeList(topList);
+		List<Role> roleList = roleService.findAll();
+		getValueStack().set("treeList", deparTree);
+		getValueStack().set("roleList", roleList);
 		return "addUI";
 	}
 	/**
