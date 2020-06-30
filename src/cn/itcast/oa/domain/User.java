@@ -18,11 +18,10 @@ public class User {
 	private String email;
 	private String description;
 	private String password;
-	private Set<Department> departments;
+	private Department departments;
 	private Set<Role> roles;
 
 	public User() {
-		this.departments = new HashSet<Department>();
 		this.roles = new HashSet<Role>();
 	}
 
@@ -90,11 +89,11 @@ public class User {
 		this.password = password;
 	}
 
-	public Set<Department> getDepartments() {
+	public Department getDepartments() {
 		return departments;
 	}
 
-	public void setDepartments(Set<Department> departments) {
+	public void setDepartments(Department departments) {
 		this.departments = departments;
 	}
 

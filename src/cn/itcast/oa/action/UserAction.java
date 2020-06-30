@@ -1,5 +1,6 @@
 package cn.itcast.oa.action;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
@@ -14,6 +15,8 @@ import cn.itcast.oa.utils.TreeViewPractice;
 @Controller
 @Scope("prototype")
 public class UserAction extends BaseAction<User>{
+	private Long deparId;
+	private Long[] roleIds;
 	/**
 	 * 1.展示用户列表
 	 */
@@ -44,6 +47,14 @@ public class UserAction extends BaseAction<User>{
 	 * 4.完成添加动作
 	 */
 	public String add() {
+		if(null != deparId) {
+			Department dept = deparService.getById(deparId);
+			model.setDepartments(dept);
+		}
+		if(null != roleIds&&roleIds.length>0) {
+			List<Role> roleList = roleService.getByIds(roleIds);
+			model.setRoles(new HashSet<Role>(roleList));
+		}
 		userService.save(model);
 		return "tolist";
 	}
