@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import cn.itcast.oa.base.BaseAction;
 import cn.itcast.oa.domain.Department;
-import cn.itcast.oa.utils.TreeViewPractice;
+import cn.itcast.oa.utils.TreeView;
 
 @Controller
 @Scope("prototype")
@@ -47,7 +47,7 @@ public class DepartmentAction extends BaseAction<Department>{
 	 */
 	public String editUI() {
 		List<Department> toplist = deparService.findTopList();
-		List<Department> list = TreeViewPractice.getTreeList(toplist,model.getId());
+		List<Department> list = TreeView.getTreeList(toplist,model.getId());
 		getValueStack().set("deparList", list);
 		Department depar = deparService.getById(model.getId());
 		if(depar.getParent()!=null) {
@@ -79,7 +79,7 @@ public class DepartmentAction extends BaseAction<Department>{
 	 */
 	public String addUI() {
 		List<Department> toplist = deparService.findTopList();
-		List<Department> list = TreeViewPractice.getTreeList(toplist);
+		List<Department> list = TreeView.getTreeList(toplist);
 		getValueStack().set("deparList", list);
 		return "addUI";
 	}

@@ -3,6 +3,8 @@ package cn.itcast.oa.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import cn.itcast.oa.utils.UserUtils;
+
 /**
  * ps:用户实体
  * 
@@ -86,7 +88,7 @@ public class User {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = UserUtils.Encryption(password);
 	}
 
 	public Department getDepartments() {

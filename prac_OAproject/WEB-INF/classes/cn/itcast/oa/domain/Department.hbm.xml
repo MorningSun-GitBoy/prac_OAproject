@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-6-1 21:03:04 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="cn.itcast.oa.domain.Department" table="itcast_department">
+        <id name="id" type="long">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="32"/>
+        </property>
+        <property name="descripeion" type="java.lang.String">
+            <column name="DESCRIPEION" length="128"/>
+        </property>
+        <many-to-one name="parent" class="cn.itcast.oa.domain.Department" fetch="join">
+            <column name="PARENT_ID" />
+        </many-to-one>
+        <set name="children" cascade="delete">
+            <key>
+                <column name="PARENT_ID" />
+            </key>
+            <one-to-many class="cn.itcast.oa.domain.Department" />
+        </set>
+        <set name="users" inverse="false" lazy="true">
+            <key>
+                <column name="DEPARTMENT_ID" />
+            </key>
+            <one-to-many class="cn.itcast.oa.domain.User" />
+        </set>
+    </class>
+</hibernate-mapping>

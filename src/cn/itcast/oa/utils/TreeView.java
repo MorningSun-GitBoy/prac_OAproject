@@ -11,7 +11,7 @@ import cn.itcast.oa.domain.Department;
  * @author Bachelor
  *
  */
-public class TreeViewPractice {
+public class TreeView {
 	public static String prefix = "├";
 	public static String space = "  ";
 	/**

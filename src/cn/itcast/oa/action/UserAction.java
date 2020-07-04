@@ -10,7 +10,7 @@ import cn.itcast.oa.base.BaseAction;
 import cn.itcast.oa.domain.Department;
 import cn.itcast.oa.domain.Role;
 import cn.itcast.oa.domain.User;
-import cn.itcast.oa.utils.TreeViewPractice;
+import cn.itcast.oa.utils.TreeView;
 
 @Controller
 @Scope("prototype")
@@ -37,7 +37,7 @@ public class UserAction extends BaseAction<User>{
 	 */
 	public String addUI() {
 		List<Department> topList = deparService.findTopList();
-		List<Department> deparTree = TreeViewPractice.getTreeList(topList);
+		List<Department> deparTree = TreeView.getTreeList(topList);
 		List<Role> roleList = roleService.findAll();
 		getValueStack().set("treeList", deparTree);
 		getValueStack().set("roleList", roleList);
@@ -62,8 +62,23 @@ public class UserAction extends BaseAction<User>{
 	 * 5.展示修改页面
 	 */
 	public String editUI() {
+		List<Department> topList = deparService.findTopList();
+		List<Department> deparTree = TreeView.getTreeList(topList);
+		List<Role> roleList = roleService.findAll();
+		getValueStack().set("treeList", deparTree);
+		getValueStack().set("roleList", roleList);
 		User usr = userService.getById(model.getId());
 		getValueStack().push(usr);
+		if(usr.getDepartments()!=null) {
+			deparId = usr.getDepartments().getId();
+		}
+		if(usr.getRoles().size()>0) {
+			roleIds = new Long[usr.getRoles().size()];
+			int i = 0;
+			for(Role r : usr.getRoles()) {
+				roleIds[i] = r.getId();
+			}
+		}
 		return "editUI";
 	}
 	/**
@@ -71,8 +86,23 @@ public class UserAction extends BaseAction<User>{
 	 */
 	public String edit() {
 		User usr = userService.getById(model.getId());
+		usr.setLoginName(model.getLoginName());
 		usr.setName(model.getName());
+		usr.setGender(model.getGender());
+		usr.setEmail(model.getEmail());
 		usr.setDescription(model.getDescription());
+		if(deparId!=null) {
+			Department depar = deparService.getById(model.getId());
+			usr.setDepartments(depar);
+		}else {
+			usr.setDepartments(null);
+		}
+		if(roleIds!=null&&roleIds.length>0) {
+			List<Role> roles = roleService.getByIds(roleIds);
+			usr.setRoles(new HashSet<Role>(roles));
+		}else {
+			usr.setRoles(null);
+		}
 		userService.update(usr);
 		return "edit";
 	}
