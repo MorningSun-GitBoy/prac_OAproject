@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitonal//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.01 Transitonal//EN">
 <html>
 	<head>
 		<title>OA 岗位设置</title>
