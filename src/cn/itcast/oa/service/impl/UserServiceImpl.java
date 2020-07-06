@@ -52,4 +52,8 @@ public class UserServiceImpl implements IUserService{
 		return userDao.findAll();
 	}
 
+	@Override
+	public boolean findLoginName(String loginName) {
+		return findLoginName(loginName);
+	}
 }

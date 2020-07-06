@@ -4,5 +4,5 @@ import cn.itcast.oa.base.IBaseDao;
 import cn.itcast.oa.domain.User;
 
 public interface IUserDao extends IBaseDao<User>{
-
+	public boolean findLoginName(String loginName);
 }

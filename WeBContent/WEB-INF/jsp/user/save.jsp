@@ -5,6 +5,21 @@
 	<head>
 		<title>OA 用户信息</title>
 		<%@include file="/WEB-INF/jsp/public/header.jsp"%>
+		<script type="text/javascript">
+			$(function(){
+				//为loginName绑定离焦事件
+				$("#loginName").blur(function(){
+					//放松Ajax请求，验证登录名是否可用
+					var url = "${pageContext.reques.contextPach}/user_findByLoginName.do"
+					$.post(url,{'loginName':$(this).val()},function(data){
+						if("0" == data)
+							$("#showMsg".html('<font color="green">登录名可以使用'));
+						else
+							$("#showMsg".html('<font color="red">登录名已存在'));
+					});
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="Title_bar">
@@ -32,7 +47,7 @@
 								</td>
 							</tr>
 							<tr><td>登录名</td>
-								<td><s:textfield name="loginName" cssClass="InputStyle"></s:textfield>*(登录名要唯一)</td>
+								<td><s:textfield id="loginName" name="loginName" cssClass="InputStyle"></s:textfield><div id="showMsg"></div>*(登录名要唯一)</td>
 							</tr>
 							<tr><td>姓名</td>
 								<td><s:textfield name="name" cssClass="InputStyle"></s:textfield>*</td>

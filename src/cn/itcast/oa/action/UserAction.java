@@ -1,8 +1,10 @@
 package cn.itcast.oa.action;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -55,6 +57,7 @@ public class UserAction extends BaseAction<User>{
 			List<Role> roleList = roleService.getByIds(roleIds);
 			model.setRoles(new HashSet<Role>(roleList));
 		}
+		//if(modle.get)
 		userService.save(model);
 		return "tolist";
 	}
@@ -115,5 +118,19 @@ public class UserAction extends BaseAction<User>{
 		userService.update(usr);
 		return "tolist";
 	}
-	
+	/**
+	 * 8.确定登录名的唯一性
+	 */
+	public String findByLoginName() {
+		String loginName = model.getLoginName();
+		ServletActionContext.getResponse().setContentType("text/html;charset=utf-8");
+		String flag = userService.findLoginName(loginName)?"1":"0";
+		try {
+			ServletActionContext.getResponse().getWriter().print(flag);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return NONE;
+	}
 }

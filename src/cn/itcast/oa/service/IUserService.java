@@ -17,4 +17,5 @@ public interface IUserService {
 
 	public List<User> findAll();// 输出整表 ：print the whole table
 
+	public boolean findLoginName(String loginName);//查找loginName项为数据的项
 }
