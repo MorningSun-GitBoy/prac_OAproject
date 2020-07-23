@@ -75,4 +75,16 @@ public class RoleAction extends BaseAction<Role>{
 		roleService.save(model);
 		return "tolist";
 	}
+	
+	/**
+	 * 7.显示权限设置界面
+	 */
+	public String privilegeUI() {
+		//查询岗位
+		//查询全部权限，并树形展示
+		Role r = roleService.getById(model.getId());
+		getValueStack().push(r);
+		
+		return "privilege";
+	}
 }

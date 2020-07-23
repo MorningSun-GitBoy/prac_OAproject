@@ -30,11 +30,11 @@
 					<s:iterator value="list">
 					<tr class="TableDetail template">
 						<td><s:a action="depar_list?parentId=%{id}" namespace="/">
-							${department.name}&nbsp;
+							${name}&nbsp;
 							</s:a>
 						</td>
-						<td>${department.parent.name}&nbsp;</td>
-						<td>${department.description}&nbsp;</td>
+						<td>${parent.name}&nbsp;</td>
+						<td>${description}&nbsp;</td>
 						<td><s:a onClick="return window.confirm('这将删除所有下级部门，确定删除此项？')" action="depar_delete?id=%{id}" namespacr="/">删除</s:a>
 							<s:a action="depar_editUI?id=%{id}" namespace="/">修改</s:a>
 						</td>

@@ -30,13 +30,13 @@
 				<tbody id="TableData" class="dataContainer" datakey="roleList">
 					<s:iterator value="list">
 					<tr class="TableDetail template">
-						<td>${user.loginName}&nbsp;</td>
-						<td>${user.name}&nbsp;</td>
-						<td>${user.department.name}&nbsp;</td>
+						<td>${loginName}&nbsp;</td>
+						<td>${name}&nbsp;</td>
+						<td>${department.name}&nbsp;</td>
 						<td>
 							<s:iterator value="roles">${name}&nbsp;</s:iterator>
 						</td>
-						<td>${user.description}&nbsp;</td>
+						<td>${description}&nbsp;</td>
 						<td><s:a onClick="return window.confirm('确定删除此项？')" action="user_delete?id=%{id}" namespacr="/">删除</s:a>
 							<s:a action="user_editUI?id=%{id}" namespace="/">修改</s:a>
 							<s:a onClick="return window.confirm('确定初始化%{name}的密码吗？')" action="user_initPW" namespace="/">初始化密码</s:a>

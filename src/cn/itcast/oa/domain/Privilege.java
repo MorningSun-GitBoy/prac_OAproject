@@ -1,5 +1,6 @@
 package cn.itcast.oa.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -16,6 +17,11 @@ public class Privilege {
 	private Set<Privilege> children;
 	private Set<Role> roles;
 
+	public Privilege() {
+		this.children = new HashSet<Privilege>();
+		this.roles = new HashSet<Role>();
+	}
+	
 	public Long getId() {
 		return id;
 	}
