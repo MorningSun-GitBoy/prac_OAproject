@@ -20,5 +20,9 @@
             </key>
             <many-to-many class="cn.itcast.oa.domain.User" column="USER_ID"/>
         </set>
+        <set name="privileges" table="itcast_role_privilege">
+        	<key column="roleId"></key>
+        	<many-to-many class="cn.itcast.oa.domain.Privilege" column="privilegeId"></many-to-many>
+        </set>
     </class>
 </hibernate-mapping>
