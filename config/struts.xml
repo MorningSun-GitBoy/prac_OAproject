@@ -23,6 +23,7 @@
 			</result>
 			<result name="editUI">/WEB-INF/jsp/role/save.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/role/save.jsp</result>
+			<result name="privilege">/WEB-INF/jsp/role/setPrivilege.jsp</result>
 		</action>
 		<action name="depar_*" class="departmentAction" method="{1}">
 			<result name="list">/WEB-INF/jsp/department/list.jsp</result>
