@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.util.ValueStack;
 
 import cn.itcast.oa.base.BaseAction;
+import cn.itcast.oa.domain.Privilege;
 import cn.itcast.oa.domain.Role;
 
 @Controller
@@ -82,8 +83,11 @@ public class RoleAction extends BaseAction<Role>{
 	public String privilegeUI() {
 		//查询岗位
 		//查询全部权限，并树形展示
+	    	//查询当前角色权限，用于回显
 		Role r = roleService.getById(model.getId());
 		getValueStack().push(r);
+		List<Privilege> plist = privService.findAll();
+		getValueStack().set("priviList", plist);
 		
 		return "privilege";
 	}

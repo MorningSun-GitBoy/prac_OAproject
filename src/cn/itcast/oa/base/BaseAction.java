@@ -22,6 +22,8 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	protected IDepartmentService deparService;
 	@Resource
 	protected IUserService userService;
+	@Resource
+	protected IPrivilegeService privService;
 	protected T model;
 
 	public BaseAction() {
