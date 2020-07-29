@@ -1,5 +1,6 @@
 package cn.itcast.oa.action;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
@@ -14,6 +15,15 @@ import cn.itcast.oa.domain.Role;
 @Controller
 @Scope("prototype")
 public class RoleAction extends BaseAction<Role>{
+    	private Long[] priviIds;
+	public Long[] getPriviIds() {
+	    return priviIds;
+	}
+
+	public void setPriviIds(Long[] priviIds) {
+	    this.priviIds = priviIds;
+	}
+
 	/**
 	 * 1.查询岗位列表
 	 */
@@ -91,4 +101,19 @@ public class RoleAction extends BaseAction<Role>{
 		
 		return "privilege";
 	}
+	
+	/**
+	 * 8.为角色设置权限
+	 */
+	public String privilege() {
+	    Role role = roleService.getById(model.getId());
+	    if(priviIds != null && priviIds.length>0) {
+		List<Privilege> list = privService.getByIds(priviIds);
+		role.setPrivileges(new HashSet<Privilege>(list));
+	    }else {
+		role.setPrivileges(null);
+	    }
+	    return "tolist";
+	}
+	
 }

@@ -19,8 +19,8 @@
 		<div id="MainArea">
 			<s:form action="role_%{id==null?'add':'edit'}" namespace="/" method="post">
 				<s:hidden name="id"></s:hidden>
-				<div class="ItemBlock_Title1">
-					<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif"/>
+				<div class="ItemBlock_Title1"><div class="ItemBlock_Title1">
+					<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/style/blue/images/item_point.gif"/></div>
 				</div>
 				<div class="ItemBlockBorder">
 					<div class="ItemBlock">

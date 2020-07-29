@@ -16,5 +16,15 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
 	// TODO Auto-generated method stub
 	return privilegeDao.findAll();
     }
+    @Override
+    public Privilege getById(Long Id) {
+	// TODO Auto-generated method stub
+	return privilegeDao.getById(Id);
+    }
+    @Override
+    public List<Privilege> getByIds(Long[] ids) {
+	// TODO Auto-generated method stub
+	return privilegeDao.getByIds(ids);
+    }
 
 }
