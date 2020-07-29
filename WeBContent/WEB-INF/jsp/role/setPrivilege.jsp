@@ -23,6 +23,20 @@
 				</div>
 				<div class="ItemBlockBorder">
 					<div class="ItemBlock">
+						<table cellpadding="0" cellspacing="0" class="mainForm">
+							<thead>
+								<tr align="LEFT" valign="MIDDLE" id="Table_Title">
+									<td width="300px" style="padding-left:7px">
+										<input type="CHECKBOX" id="cbSelectAll" onClick="selectAll(this.checked)"/>
+										<label for="cbSelectAll">全选</label>
+									</td>
+								</tr>
+							</thead>
+							<tbody id="TableData">
+								<tr class="TableDetail">
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</form>
