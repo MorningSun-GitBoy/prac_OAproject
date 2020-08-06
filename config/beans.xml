@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 读取属性文件 -->
+	<!-- Read property files -->
+	
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!-- 数据库配置 -->
+	<!-- Configure database -->
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${driverClass}"></property>
+		<property name="jdbcurl" value="${jdbcurl}"></property>
+		<property name="user" value="${user}"></property>
+		<property name="password" value="${password}"></property>
+		<property name="initialPoolSize" value="${initialPoolSize}"></property>
+		<property name="minPoolSize" value="${minPoolSize}"></property>
+		<property name="maxPoolSize" value="${maxPoolSize}"></property>
+	</bean>
+
+	<!-- 本地会话工厂Bean -->
+	<!-- Local session factory bean -->
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 注入hibernate属性 -->
+		<!-- inject hibernate properties -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.formate_sql">true</prop>
+			</props>
+		</property>
+		<!-- hibernate映射文件 -->
+		<!-- hibernate mapping file -->
+		<property name="mappingDirectoryLocation">
+			<list>
+				<value>classpath:cn/itcast/oa/domain/</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Hibernate事务管理器 -->
+	<!-- Hibernate events manager -->
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		
+	</bean>
+
+	<!-- 对注解提供支持 -->
+	<!-- To support annotation -->
+	
+	<context:annotation-config />
+	
+	<!-- 组件扫描 -->
+	<!-- component scanner -->
+	
+	<context:component-scan base-package="cn.itcast.oa" />
+	
+	<!-- 注解驱动 -->
+	<!-- Annotation driven -->
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+</beans>
