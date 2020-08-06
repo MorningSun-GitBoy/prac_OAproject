@@ -51,31 +51,8 @@ jQury|1.8
 ```
 基于 POJO 编程模型,使用依赖注入和控制反转技术，通过轻量级的 IOC 容器实现开发和部署应用程序的框架。依赖注入（或者有时被称为配线）可以通过向构造函数传递参数的方式，或者通过使用 setter 方法 post-construction发生，有助于将这些类粘合在一起，并且在同一时间让它们保持独立。spring提供了一致的事务管理接口，具有良好的扩展性。目前仍在使用
 ```
-* * 环境配置（config）
-```
-bean.xml:
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-				http://www.springframework.org/schema/beans/spring-beans.xsd
-				http://www.springframework.org/schema/context
-				http://www.springframework.org/schema/context/spring-context.xsd
-				http://www.springframework.org/schema/aop
-				http://www.springframework.org/schema/aop/spring-aop.xsd
-				http://www.springframework.org/schema/tx
-				http://www.springframework.org/schema/tx/spring-tx.xsd">
-<bean id="sessionFactory" class="<持久化工厂对应的类>">
-<bean id="txManager" class="<持久化工厂对应的管理类>"><property <参数>/></bean>
-```
+* * 环境配置
 * * 原理
-```
-IOC容器管理着所有的Bean对象，并对依赖注入提供支持
-Bean是spring的元数据的实例对象，通过它来讲IOC与元数据解耦。Bean具有五个作用域，分别为singleton、prototype、request、session和global session
-
-```
 * hibernet
 ```
 对JDBC进行了非常轻量级的对象封装，它将POJO与数据库表建立映射关系，是一个全自动的orm框架（利用描述对象和数据库表之间映射的元数据，自动把Java应用程序中的对象，持久化到关系型数据库的表中），hibernate可以自动生成SQL语句，自动执行;但是无法调优，最终被淘汰
