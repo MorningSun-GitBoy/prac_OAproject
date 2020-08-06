@@ -128,3 +128,7 @@ util的搭建
 * * password:String
 * * department:Department
 * * roles:Set::Role
+## 框架学习
+* Struts2
+* Spring
+* Hibernate

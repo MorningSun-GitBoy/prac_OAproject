@@ -125,3 +125,7 @@ to build util
 * * password:String
 * * department:Department
 * * roles:Set::Role
+## Framework Study
+* Struts2
+* Spring
+* Hibernate
