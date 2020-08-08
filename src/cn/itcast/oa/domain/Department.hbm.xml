@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.oa.domain.Department" table="itcast_oa_depar">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" length="32"></property>
+		<property name="description" length="256"></property>
+		<many-to-one name="parent" class="cn.itcast.oa.domain.Department" column="parentId"></many-to-one>
+		<set name="children">
+			<key column="parentId"></key>
+			<one-to-many class="cn.itcast.oa.domain.Department"></one-to-many>
+		</set>
+		<set name="users" >
+			<key column="departmentId"></key>
+			<one-to-many class="cn.itcast.oa.domain.User"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>
