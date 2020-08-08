@@ -77,16 +77,17 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public Set<Department> getDepartments() {
-        return departments;
-    }
-    public void setDepartments(Set<Department> departments) {
-        this.departments = departments;
-    }
     public Set<Role> getRoles() {
         return roles;
     }
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+    public Department getDepartment() {
+        return department;
+    }
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+    
 }
