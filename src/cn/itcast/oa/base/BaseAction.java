@@ -3,11 +3,22 @@ package cn.itcast.oa.base;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import javax.annotation.Resource;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import cn.itcast.oa.service.IDepartmentService;
+import cn.itcast.oa.service.IRoleService;
+import cn.itcast.oa.service.IUserService;
+
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
-    
+    @Resource
+    protected IUserService userService;
+    @Resource
+    protected IDepartmentService departmentService;
+    @Resource
+    protected IRoleService roleService;
     protected T model;
     @SuppressWarnings("unchecked")
     public BaseAction() {
