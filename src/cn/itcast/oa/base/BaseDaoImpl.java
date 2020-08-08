@@ -9,13 +9,13 @@ import javax.annotation.Resource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class BasDaoImpl<T> implements IBaseDao<T> {
+public class BaseDaoImpl<T> implements IBaseDao<T> {
     @Resource
     private SessionFactory sessionFactory;//会话工厂
     private Class<T> clazz;//泛型的类型
     
     @SuppressWarnings("unchecked")
-    public BasDaoImpl() {
+    public BaseDaoImpl() {
 	/**
 	 * aim:获得泛型的类型，即初始化clazz
 	 * 1.获得本类类型
