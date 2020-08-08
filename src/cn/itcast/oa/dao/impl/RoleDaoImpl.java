@@ -4,6 +4,6 @@ import cn.itcast.oa.base.BaseDaoImpl;
 import cn.itcast.oa.dao.IRoleDao;
 import cn.itcast.oa.domain.Role;
 
-public class RoleDaoImpl extends BaseDaoImpl<Role> implements IRoleDao<Role> {
+public class RoleDaoImpl extends BaseDaoImpl<Role> implements IRoleDao {
 
 }
