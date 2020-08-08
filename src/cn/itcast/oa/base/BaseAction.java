@@ -7,8 +7,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
-
+    
     protected T model;
+    @SuppressWarnings("unchecked")
     public BaseAction() {
 	// TODO Auto-generated constructor stub
 	/**
@@ -23,6 +24,12 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	//只寻求类的泛型
 	Type[] types = genericSupperClass.getActualTypeArguments();//得到泛型中的各类
 	Class<T> clazz = (Class<T>) types[0];
+	try {
+	    model = clazz.newInstance();
+	} catch (InstantiationException | IllegalAccessException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
     }
     
     @Override
