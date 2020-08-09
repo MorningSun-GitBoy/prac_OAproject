@@ -23,7 +23,7 @@
 	
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${driverClass}"></property>
-		<property name="jdbcurl" value="${jdbcurl}"></property>
+		<property name="jdbcUrl" value="${jdbcurl}"></property>
 		<property name="user" value="${user}"></property>
 		<property name="password" value="${password}"></property>
 		<property name="initialPoolSize" value="${initialPoolSize}"></property>
@@ -48,7 +48,7 @@
 		</property>
 		<!-- hibernate映射文件 -->
 		<!-- hibernate mapping file -->
-		<property name="mappingDirectoryLocation">
+		<property name="mappingDirectoryLocations">
 			<list>
 				<value>classpath:cn/itcast/oa/domain/</value>
 			</list>
