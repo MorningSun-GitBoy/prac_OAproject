@@ -86,16 +86,19 @@ Hibernate is denpendented with jdbc in basic so we should also include jdbc jar.
 ```
 to build action
     there will be abstract a class from actions putting into base,which shuold implement a  interface and extends SupperAction but also  all the service interface object as the properties.
-    write common action class in action to give project their functions.
+    write common action class in action to give project their functions which struts need to call.
 to build dao
     dao are divided to generic dao and other dao，generic dao write in base and others write in dao.Ususally , we write at interface————implenments way,every dao has their own implement.You should put into package impl,due to base class has a littel number,so do not dispqch interface and implenments.
     basedao：first thing is to reconganize the gernerics class type,then you should realize the fundmatal database operation method.
+    the implemented class in dao need to write annotation @Repository
 to build domain
     one class has a same name .hbm.xml fiel,which head boday an copy from>>hibernate3.jar>org.hibernate>hibernate-mapping-3.0.dtd .
     label id mains key , should set the type;
     label porperty is other arributes.
 to build service
     also useinterface————implenments way,every dao has their own implement,which has a similar package way.
+    the implemented class in service need to write annotations @Service and @Transactional
+    in those class need to write the corresponding dao with the annotation @Resource
 to build util
     we will abstract some generic class in project to make code forthright.
 ```

@@ -89,16 +89,19 @@ hibernate底层依赖jdbc还需要引入一个jdbc的jar
 ```
 action的搭建
     action在项目中会抽象出一个父类放入base，其父类要实现一个接口并继承action的超类，并将一切service接口对象安置在类中。
-    在action中写入普通action类，完成功能
+    在action中写入普通action类，完成与struts对接的功能
 dao的搭建
     dao分为通用dao和其他dao，通用dao写在base里，其他dao要写进dao里。一般采用接口————实例的方式，每个dao都实现对应的接口，将类单独放在impl包中，由于base类有限，故不区分。
     basedao：主要在于泛型的识别，其次是增删改查的基本实现。
+    dao中的实现类需要写上@Repository注解
 domain的搭建
     一个类对应一个同名的.hbm.xml文件，其头标签可以从>>hibernate3.jar>org.hibernate>hibernate-mapping-3.0.dtd中摘录。
     其中id多是主键，要设置类型
     porperty为其他属性
 service的搭建
     也是采用接口————实例的方式，每个service实现对应的接口。分包与dao相同。
+    service的实现类需写入@Service注解和@Transactional注解
+    service中要拿到对应的dao接口并写上@Resource注解
 util的搭建
     主要用于存放项目中的几个通用方法类库，使得代码更少。
 ```
