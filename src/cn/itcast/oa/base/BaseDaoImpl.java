@@ -65,7 +65,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
 	 * List<T> entities = new ArrayList<T>(); for(Long id : ids) { entities.add((T)
 	 * getCurrentSession().get(entity, id)); }
 	 *///使用java不如使用hql，这样更省资源
-	String hql = "FROM "+entity.getSimpleName()+" WHERE id in (:ids)";//(:ids)命名参数
+	String hql = "FROM "+clazz.getSimpleName()+" WHERE id in (:ids)";//(:ids)命名参数
 	return getCurrentSession().createQuery(hql).setParameterList("ids", ids).list();
 	//setParameterList("ids", ids) 用于给参数赋值
     }
@@ -74,7 +74,7 @@ public class BaseDaoImpl<T> implements IBaseDao<T> {
     @Override
     public List<T> selectAllEntitys() {
 	// TODO Auto-generated method stub
-	String hql = "FROM "+entity.getSimpleName();
+	String hql = "FROM "+clazz.getSimpleName();
 	return getCurrentSession().createQuery(hql).list();
     }
 

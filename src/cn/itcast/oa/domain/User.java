@@ -19,7 +19,7 @@ import java.util.Set;
  */
 public class User {
     private Long id;
-    private String loginname;
+    private String loginName;
     private String name;
     private int gender;
     private String phone;
@@ -35,11 +35,11 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getLoginname() {
-        return loginname;
+    public String getLoginName() {
+        return loginName;
     }
-    public void setLoginname(String loginname) {
-        this.loginname = loginname;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
     public String getName() {
         return name;
