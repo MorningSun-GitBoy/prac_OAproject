@@ -136,6 +136,8 @@ to build util
     Configure：
     Struts2 provide two configurate ways.One is using key=value write a properties file,another is using xml files.The followed is more recommended because it can descript layer relations.
     Main Class:
+        struts1
+        struts2
 ```
 * Spring
 ```

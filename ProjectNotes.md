@@ -138,7 +138,9 @@ util的搭建
     struts2使用MVC架构，控制器是通过Struts2 分派servlet过滤器以及拦截器进行实现，模型是通过Actions进行实现，而视图则是结果类型和结果的结合。
     配置：
     Struts2提供了两种配置的方式。一种是key=value的方式，即使用.properties文件。另一种是xml文件配置。我们推荐使用xml文件（它能描述层级关系）。
-    关键类:
+    核心类:
+        struts1
+        struts2
 ```
 * Spring
 ```
