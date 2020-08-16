@@ -130,5 +130,16 @@ to build util
 * * roles:Set::Role
 ## Framework Study
 * Struts2
+```
+    Basic theory：
+    struts2 using MVC framework，Struts2 dispatch servlet filter and interceptor to realize controller ,use Actions to realize model ,and make result and their types as veiw. 
+    Configure：
+    Struts2 provide two configurate ways.One is using key=value write a properties file,another is using xml files.The followed is more recommended because it can descript layer relations.
+    Main Class:
+```
 * Spring
+```
+```
 * Hibernate
+```
+```
