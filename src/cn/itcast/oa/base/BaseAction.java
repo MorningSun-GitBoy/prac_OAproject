@@ -5,8 +5,10 @@ import java.lang.reflect.Type;
 
 import javax.annotation.Resource;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.util.ValueStack;
 
 import cn.itcast.oa.service.IDepartmentService;
 import cn.itcast.oa.service.IRoleService;
@@ -48,5 +50,8 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	// TODO Auto-generated method stub
 	return model;
     }
-
+    
+    public ValueStack getValueStack() {
+	return ActionContext.getContext().getValueStack();
+    }
 }

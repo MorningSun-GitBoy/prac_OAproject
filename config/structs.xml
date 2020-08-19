@@ -13,6 +13,10 @@
 	<!-- configure Action suffix for struts -->
 	<constant name="struts.action.extension" value="do"></constant>
 	
+	<constant name="struts.ui.theme" value="simple"></constant>
 	<package name="default" namespace="/" extends="struts-default">
+		<action name="role_*" class="roleAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/role/list.jsp</result>
+		</action>
 	</package>
 </struts>
