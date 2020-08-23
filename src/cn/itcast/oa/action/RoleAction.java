@@ -11,6 +11,7 @@ import cn.itcast.oa.base.BaseAction;
 import cn.itcast.oa.dao.IRoleDao;
 import cn.itcast.oa.domain.Role;
 
+@SuppressWarnings("serial")
 @Controller
 @Scope("prototype")
 public class RoleAction extends BaseAction<Role>{
@@ -26,6 +27,9 @@ public class RoleAction extends BaseAction<Role>{
     /**
      * 2.返回更改页面
      */
+    public String editUI() {
+	return "editUI";
+    }
     /**
      * 3.进行更改
      */

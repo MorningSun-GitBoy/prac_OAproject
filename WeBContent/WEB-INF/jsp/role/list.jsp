@@ -35,7 +35,7 @@
                     <td>${description}&nbsp;</td>
                     <td><s:a onclick="return window.confirm('确定删除此项？')" action="role_delete?id=%{id}" namespace="/">删除</s:a>
                         <s:a action="role_editUI?id=%{id}" namespace="/">修改</s:a>
-                        <s:a href="setPrivilegeUI.html">设置权限</s:a>
+                        <s:a action="role_setPrivilegeUIid=%{id}" namespace="/">设置权限</s:a>
                     </td>
                 </tr>
                 </s:iterator>
@@ -43,7 +43,7 @@
         </table>
         <div id="TableTail">
             <div id="TableTail_inside">
-                <a href="roleSave.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
+                <s:a action="role_save" namespace="/"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></s:a>
             </div>
         </div>
     </div>
