@@ -139,12 +139,22 @@ util的搭建
     配置：
     Struts2提供了两种配置的方式。一种是key=value的方式，即使用.properties文件。另一种是xml文件配置。我们推荐使用xml文件（它能描述层级关系）。
     核心类:
-        struts1
-        struts2
+        StrutsPrepareAndExecuteFilter
+        ActionSupport
+        ActionContext
 ```
 * Spring
 ```
+    基本原理：
+    配置：
+    核心类：
+        ContextLoaderListener
+        BeanFactory
+        DriverManagerDataSource
 ```
 * Hibernate
 ```
+    基本原理：
+    配置：
+    核心类：
 ```
