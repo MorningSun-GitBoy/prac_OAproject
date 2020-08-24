@@ -140,8 +140,11 @@ util的搭建
     Struts2提供了两种配置的方式。一种是key=value的方式，即使用.properties文件。另一种是xml文件配置。我们推荐使用xml文件（它能描述层级关系）。
     核心类:
         StrutsPrepareAndExecuteFilter
+        主要的拦截器，控制进入struts的请求。
         ActionSupport
+        Action接口的实现类,用于完成控制器的功能。
         ActionContext
+        struts中的存储容器，用于保障struts的线程安全。
 ```
 * Spring
 ```
@@ -149,7 +152,11 @@ util的搭建
     配置：
     核心类：
         ContextLoaderListener
+        在服务器容器中启动spring所需的类
+        ApplicationContext
+        spring的存储容器，
         BeanFactory
+        bean的容器
         DriverManagerDataSource
 ```
 * Hibernate

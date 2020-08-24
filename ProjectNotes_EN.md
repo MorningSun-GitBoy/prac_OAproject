@@ -137,8 +137,11 @@ to build util
     Struts2 provide two configurate ways.One is using key=value write a properties file,another is using xml files.The followed is more recommended because it can descript layer relations.
     Main Class:
         StrutsPrepareAndExecuteFilter
+        the main filter of struts,controll the request to response or not
         ActionSupport
+        the class implemented Action interface,to excute the function of controller.
         ActionContext
+        the container struts used,to keep servlet thread-safe.
 ```
 * Spring
 ```
@@ -146,6 +149,7 @@ to build util
     Configuration:
     Main Class:
         ContextLoaderListener
+        
         BeanFactory
         DriverManagerDataSource
 ```
