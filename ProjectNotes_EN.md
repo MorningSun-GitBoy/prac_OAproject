@@ -146,12 +146,17 @@ to build util
 * Spring
 ```
     Basic theory：
+    using bean factory to create objects with the xml,connect ,design and control them and their whole life cycle ,from created to distoried.Also provide interfaces to performing layer and persistent layer.
     Configuration:
     Main Class:
         ContextLoaderListener
-        
+        start the classes spring need in server container.
+        ApplicationContext
+        Spring main container. 
         BeanFactory
+        to create bean
         DriverManagerDataSource
+
 ```
 * Hibernate
 ```
